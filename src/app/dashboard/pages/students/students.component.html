@@ -1,0 +1,76 @@
+<form [formGroup]="studentsForm">
+    <h3 class="msg-title">Agregar Estudiante</h3>
+    <label>Nombre</label>
+        <input 
+            formControlName="name" 
+            type="text" 
+            placeholder="Nombre"
+            class="form-input"
+            [class.is-invalid]="nameControl.invalid && nameControl.touched"
+        />
+        <ng-container *ngIf="nameControl.touched">
+            <app-form-error-helpers [formErrors]="nameControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+    <label>Apellido</label>
+        <input 
+            formControlName="lastName" 
+            type="text" 
+            placeholder="Apellido"
+            class="form-input"
+            [class.is-invalid]="lastNameControl.invalid && lastNameControl.touched"
+        />
+        <ng-container *ngIf="lastNameControl.touched">
+            <app-form-error-helpers [formErrors]="lastNameControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+    <label>E-mail</label>
+        <input 
+            formControlName="email" 
+            type="email" 
+            placeholder="E-mail"
+            class="form-input"
+            [class.is-invalid]="emailControl.invalid && emailControl.touched"
+         />
+        <ng-container *ngIf="emailControl.touched">
+            <app-form-error-helpers [formErrors]="emailControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        <label>Género</label>
+        <select 
+            name="Seleccione"
+            formControlName="gender"
+            [class.is-invalid]="genderControl.invalid && genderControl.touched"
+            >
+            <option value="M">Hombre</option>
+            <option value="F">Mujer</option>
+          </select>
+        <ng-container *ngIf="genderControl.touched">
+            <app-form-error-helpers [formErrors]="genderControl.errors"></app-form-error-helpers>
+        </ng-container>
+        
+    <button *ngIf="!isEditing" (click)="onSubmit()">Enviar</button>
+    <button *ngIf="isEditing" (click)="update()">Guardar Cambios</button>
+</form>
+
+
+<h3 class="section-title" [appFontSize]="1.2">Estudiantes</h3>
+<div class="students-list-box">
+    <ng-container *ngFor="let student of studentsList; index as i">
+        <div class="students-box" [ngClass]="{'delete-animation': selectedIndex == student.id}">
+            <div class="edit-box">
+                <img *ngIf="student.gender == 'M'" src="../../../assets/profile.png" class="profile-pic" />
+                <img *ngIf="student.gender == 'F'" src="../../../assets/profilewoman.png" class="profile-pic" />
+               <div class="icons-box">
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin'" (click)="onEdit(student, i)" class="edit-icon material-icons-outlined">edit</mat-icon>
+                <mat-icon (click)="navigateToDetail(student.id)" class="edit-icon material-icons-outlined">visibility</mat-icon>  
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin'" (click)="onDelete(student.id)" class="delete material-icons-outlined">close</mat-icon>   
+               </div>
+            </div>
+            <p class="student-text">Nombre: <span [ngClass]="student.gender == 'F' ? 'female-text' : 'male-text'">{{student | fullName}}</span></p>
+            <p class="student-text">Email: {{student.email}}</p>
+        </div>
+    </ng-container>
+</div>
+
+

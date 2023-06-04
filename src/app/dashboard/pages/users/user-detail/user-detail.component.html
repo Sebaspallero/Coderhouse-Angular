@@ -1,0 +1,20 @@
+<div class="user-detail-box">
+    <div [ngClass]="user?.gender == 'F' ? 'banner-pink' : 'banner'"></div>
+    <div class="profile-pic-box">
+        <img *ngIf="user?.gender == 'M'" src="../../../assets/profile.png" class="profile-pic" />
+        <img *ngIf="user?.gender == 'F'" src="../../../assets/profilewoman.png" class="profile-pic" />
+    </div>
+    <div class="info-box">
+        <div>
+            <p [ngClass]="user?.gender == 'F' ? 'female-text' : 'male-text'">{{user?.name}} {{user?.lastName}}</p>
+            <div class="user-status-box">
+                <p class="user-status">{{user.role}}</p>
+                <p class="user-status">- ID: {{user?.id}}</p>
+            </div>
+        </div>
+        <div>
+            <p class="user-status">Email</p>
+            <p class="user-info">{{user?.email}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="student-detail-box">
+    <div [ngClass]="student?.gender == 'F' ? 'banner-pink' : 'banner'"></div>
+    <div class="profile-pic-box">
+        <img *ngIf="student?.gender == 'M'" src="../../../assets/profile.png" class="profile-pic" />
+        <img *ngIf="student?.gender == 'F'" src="../../../assets/profilewoman.png" class="profile-pic" />
+    </div>
+    <div class="info-box">
+        <div>
+            <p [ngClass]="student?.gender == 'F' ? 'female-text' : 'male-text'">{{student?.name}} {{student?.lastName}}</p>
+            <div class="user-status-box">
+                <p class="user-status">Estudiante</p>
+                <p class="user-status">- ID: {{student?.id}}</p>
+            </div>
+        </div>
+        <div>
+            <p class="user-status">Email</p>
+            <p class="user-info">{{student?.email}}</p>
+        </div>
+        <div>
+            <p class="user-status">Fecha de inscripcion</p>
+            <p class="user-info">{{student?.registrationDate | date:'dd/MM/YYYY'}}</p>
+        </div>
+    </div>
+    <div *ngIf="subjects && subjects.length > 0" class="subject-box">
+        <p class="courses-title">Cursos</p>
+        <div *ngFor="let subject of subjects, index as i" class="course-flex">
+            <div class="course-name"><span class="bullet"></span>{{subject.name}}</div>
+        </div>
+    </div>
+</div>

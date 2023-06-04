@@ -1,0 +1,101 @@
+<form [formGroup]="userForm">
+    <h3 class="msg-title">Agregar Usuario</h3>
+    <label>Nombre</label>
+        <input 
+            formControlName="name" 
+            type="text" 
+            placeholder="Nombre"
+            class="form-input"
+            [class.is-invalid]="nameControl.invalid && nameControl.touched"
+        />
+        <ng-container *ngIf="nameControl.touched">
+            <app-form-error-helpers [formErrors]="nameControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+    <label>Apellido</label>
+        <input 
+            formControlName="lastName" 
+            type="text" 
+            placeholder="Apellido"
+            class="form-input"
+            [class.is-invalid]="lastNameControl.invalid && lastNameControl.touched"
+        />
+        <ng-container *ngIf="lastNameControl.touched">
+            <app-form-error-helpers [formErrors]="lastNameControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        
+    <label>Género</label>
+        <select 
+            formControlName="gender"
+            [class.is-invalid]="genderControl.invalid && genderControl.touched"
+            >
+            <option value="M">Hombre</option>
+            <option value="F">Mujer</option>
+        </select>
+        <ng-container *ngIf="genderControl.touched">
+            <app-form-error-helpers [formErrors]="genderControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+
+    <label>E-mail</label>
+        <input 
+            formControlName="email" 
+            type="email" 
+            placeholder="E-mail"
+            class="form-input"
+            [class.is-invalid]="emailControl.invalid && emailControl.touched"
+         />
+        <ng-container *ngIf="emailControl.touched">
+            <app-form-error-helpers [formErrors]="emailControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        <label>Contraseña</label>
+        <input 
+            formControlName="password" 
+            type="password" 
+            placeholder="Contraseña"
+            class="form-input"
+            [class.is-invalid]="passwordControl.invalid && passwordControl.touched"
+        />
+        <ng-container *ngIf="passwordControl.touched">
+            <app-form-error-helpers [formErrors]="passwordControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        <label>Status</label>
+        <select 
+            formControlName="role"
+            [class.is-invalid]="roleControl.invalid && roleControl.touched"
+            >
+            <option value="user">Usuario</option>
+            <option value="admin">Administrador</option>
+          </select>
+        <ng-container *ngIf="roleControl.touched">
+            <app-form-error-helpers [formErrors]="roleControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        
+    <button *ngIf="!isEditing" (click)="onSubmit()">Enviar</button>
+    <button *ngIf="isEditing" (click)="update()">Guardar Cambios</button>
+</form>
+
+
+<h3 class="section-title" [appFontSize]="1.2">Usuarios</h3>
+<div class="students-list-box">
+    <ng-container *ngFor="let user of usersList; index as i">
+        <div class="students-box" [ngClass]="{'delete-animation': selectedIndex == user.id}">
+            <div class="edit-box">
+                <img *ngIf="user.gender == 'M'" src="../../../assets/profile.png" class="profile-pic" />
+                <img *ngIf="user.gender == 'F'" src="../../../assets/profilewoman.png" class="profile-pic" />
+               <div class="icons-box">
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin' && (authUser$ | async)?.id !== user.id" (click)="onEdit(user, i)" class="edit-icon material-icons-outlined">edit</mat-icon>
+                <mat-icon (click)="navigateToDetail(user.id)" class="edit-icon material-icons-outlined">visibility</mat-icon>  
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin' && (authUser$ | async)?.id !== user.id " (click)="onDelete(user.id)" class="delete material-icons-outlined">close</mat-icon>   
+               </div>
+            </div>
+            <p class="student-text">Nombre: <span [ngClass]="user.gender == 'F' ? 'female-text' : 'male-text'">{{user | fullName}}</span></p>
+            <p class="student-text">Email: {{user.email}}</p>
+            <p class="student-text">Status: {{user.role}}</p>
+        </div>
+    </ng-container>
+</div>

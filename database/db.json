@@ -1,0 +1,126 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sebastián",
+      "lastName": "Pallero",
+      "email": "sebastian@email.com",
+      "gender": "M",
+      "password": "12345",
+      "token": 128463782,
+      "role": "admin"
+    },
+    {
+      "name": "María",
+      "lastName": "Pérez",
+      "email": "maria@email.com",
+      "gender": "F",
+      "password": "12345",
+      "role": "user",
+      "token": 129483748,
+      "id": 2
+    },
+    {
+      "name": "Martina",
+      "lastName": "Mervitch",
+      "email": "martina@email.com",
+      "gender": "F",
+      "password": "12345",
+      "role": "admin",
+      "id": 3,
+      "token": 1685822473435
+    }
+  ],
+  "courses": [
+    {
+      "subjectId": 1,
+      "startDate": "2023-05-28T03:00:00.000Z",
+      "endDate": "2023-05-29T03:00:00.000Z",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "subjectId": 2,
+      "endDate": "2023-04-27T01:27:59.631Z",
+      "startDate": "2023-04-27T01:27:59.631Z"
+    },
+    {
+      "id": 3,
+      "subjectId": 3,
+      "endDate": "2023-04-27T01:27:59.631Z",
+      "startDate": "2023-04-27T01:27:59.631Z"
+    },
+    {
+      "subjectId": 4,
+      "startDate": "2023-06-19T03:00:00.000Z",
+      "endDate": "2023-06-30T03:00:00.000Z",
+      "id": 4
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "description": "Curso de Angular con duración de 2 meses.",
+      "logo": "../../../../../assets/angular--logo.png"
+    },
+    {
+      "id": 2,
+      "name": "Vue",
+      "description": "Curso de Vue con duración de 2 meses.",
+      "logo": "../../../../../assets/vue-logo.png"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "description": "Curso de JavaScript con duración de 2 meses.",
+      "logo": "../../../../../assets/JavaScript-logo.png"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "description": "Curso de React con duración de 2 meses.",
+      "logo": "../../../../../assets/react-logo.png"
+    }
+  ],
+  "inscriptions": [
+    {
+      "studentId": 1,
+      "subjectId": 3,
+      "courseId": 3,
+      "id": 1
+    },
+    {
+      "studentId": 2,
+      "subjectId": 2,
+      "courseId": 2,
+      "id": 2
+    }
+  ],
+  "students": [
+    {
+      "name": "Martín",
+      "lastName": "Pelé",
+      "email": "martincho@email.com",
+      "gender": "M",
+      "id": 2,
+      "registrationDate": "2023-04-27T01:27:59.631Z"
+    },
+    {
+      "name": "Maria",
+      "lastName": "Lariz",
+      "email": "flor@email.com",
+      "gender": "F",
+      "id": 1,
+      "registrationDate": "2023-04-27T01:27:59.631Z"
+    },
+    {
+      "id": 3,
+      "name": "Marcos",
+      "lastName": "Fillipo",
+      "email": "marcos@email.com",
+      "gender": "M",
+      "registrationDate": "2023-04-27T01:27:59.631Z"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+.container-class-status{
+    background-color: var(--white-clr);
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+    margin: 1em 0em 3em 0em;
+}
+
+.container-msg{
+    width: 50%;
+    padding: 1em;
+}
+
+.msg-title{
+    font-size: var(--fs-subtitle);
+    color: var(--dark-blue-clr);
+    margin-bottom: 1em;
+}
+
+span{
+    color: var(--accent-clr);
+}
+
+
+.msg-class-status{
+    font-size: var(--fs-text);
+    color: var(--dark-blue-clr);
+    margin-bottom: 1.5em;
+}
+
+.btn-class{
+    color:var(--white-clr);
+    background-color: var(--blue-clr);
+    box-shadow: var(--box-shadow);
+    width: 9em;
+    height: 3.3em;
+    border-radius: 50px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 0.8s ease;
+}
+
+.btn-class:hover{
+    transform: scale(1.05);
+}
+ 
+.section-title{
+    font-size: var(--fs-subtitle);
+    color: var(--dark-blue-clr);
+}
+
+ .students-box{
+    background-color: var(--white-clr);
+    border-radius: 15px;
+    width: 60%;
+    padding: 1em;
+    margin: 1em;
+    margin-left: 0;
+    box-shadow: var(--box-shadow);
+ }
+
+ .student-text{
+    font-size: var(--fs-text);
+    color: var(--dark-blue-clr);
+ }
+
+ .female-text{
+    font-size: var(--fs-text);
+    color: rgba(233, 148, 162, 0.925);
+ }
+
+ .male-text{
+    font-size: var(--fs-text);
+    color: var(--blue-clr);
+ }
+
+ .profile-pic{
+    height: 50px;
+    width: 50px;
+    border-radius: .3em
+}
+
+
+  

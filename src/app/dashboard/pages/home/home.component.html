@@ -1,0 +1,10 @@
+<section>
+    <div class="container-class-status">
+        <div class="container-msg">
+            <h3 class="msg-title">¡Hola de nuevo <span>{{(authUser$ | async)?.name}}</span>!</h3>
+            <p class="msg-class-status">Actualmente no tienes ningún curso pendiente... ¡Este es el mejor momento para anotarte a una nueva aventura!</p>
+            <button class="btn-class" (click)="navigateToForm()">Anotarme</button>
+        </div>
+        <img src="../../../assets/usuario png.png" class="user-img">
+    </div>
+</section>

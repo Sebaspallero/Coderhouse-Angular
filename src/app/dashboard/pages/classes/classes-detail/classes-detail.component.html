@@ -1,0 +1,33 @@
+<div class="course-detail-box"  *ngIf="course && course.length > 0">
+    <div class="banner"></div>
+    <div class="profile-pic-box">
+        <img  [src]="course[0].subject.logo" class="profile-pic" />
+    </div>
+    <div class="info-box">
+        <div>
+            <p class="male-text">{{course[0].subject.name}}</p>
+            <div class="user-status-box">
+                <p class="user-status">Curso</p>
+                <p class="user-status">- ID: {{course[0].id}}</p>
+            </div>
+        </div>
+        <div>
+            <p class="user-status">Sobre el Curso</p>
+            <p class="course-info">{{course[0].subject.description}}</p>
+        </div>
+        <div>
+            <p class="user-status">Fecha de Inicio</p>
+            <p class="course-info">{{course[0].startDate | date:'dd/MM/YYYY'}}</p>
+        </div>
+        <div>
+            <p class="user-status">Fecha de Finalización</p>
+            <p class="course-info">{{course[0].endDate | date:'dd/MM/YYYY'}}</p>
+        </div>
+    </div>
+    <div *ngIf="students && students.length > 0" class="subject-box">
+        <p class="courses-title">Estudiantes</p>
+        <div *ngFor="let student of students, index as i" class="course-flex">
+            <div class="course-name"><span class="bullet"></span>{{student | fullName}}</div>
+        </div>
+    </div>
+</div>

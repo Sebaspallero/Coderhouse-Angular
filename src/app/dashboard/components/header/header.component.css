@@ -1,0 +1,56 @@
+.header-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em .5em;
+}
+
+.dashboard-logo-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2%;
+}
+
+.header-title{
+    color:var(--dark-blue-clr);
+    font-size: var(--fs-subtitle);
+    margin-left: 1em;
+}
+
+.userinfo-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    margin: 0em 2em;
+}
+
+.logo-sidebar{
+    width: 40px;
+    height: 40px;
+    
+}
+
+.header-profile-pic{
+    height: 50px;
+    width: 54px;
+    border-radius: .3em
+}
+
+.userstatus-box{
+    display: flex;
+    flex-direction: column;
+    gap: .1em;
+}
+
+.header-username{
+    color:var(--dark-blue-clr);
+    font-size: var(--fs-text)
+}
+
+.header-userstatus{
+    color:var(--light-blue-clr);
+    font-size: var(--fs-sm-text)
+}

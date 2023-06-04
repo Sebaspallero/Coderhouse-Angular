@@ -1,0 +1,51 @@
+<form [formGroup]="inscriptionForm">
+    <h3 class="msg-title">Inscribir Estudiante</h3>
+    <label>Nombre del Estudiante</label>
+        <select 
+            [formControl]="studentIdControl"
+            [class.is-invalid]="studentIdControl.invalid && studentIdControl.touched">   
+        <option selected disabled hidden style='display: none' value=''></option>
+        <option [value]="student.id" *ngFor="let student of studentList">{{student | fullName}}</option>
+        </select>
+        <ng-container *ngIf="studentIdControl.touched">
+            <app-form-error-helpers [formErrors]="studentIdControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+        <label>Curso</label>
+        <select 
+            [formControl]="selectedCourseControl"
+            [class.is-invalid]="selectedCourseControl.invalid && selectedCourseControl.touched">
+            <option selected disabled hidden style='display: none' value=''></option>
+            <option [value]="course.id" *ngFor="let course of courseList">
+                {{course.subject.name}}: {{course.startDate | date:'dd/MM/YYYY'}} - {{course.endDate | date:'dd/MM/YYYY'}}
+            </option>
+          </select>
+        <ng-container *ngIf="selectedCourseControl.touched">
+            <app-form-error-helpers [formErrors]="selectedCourseControl.errors"></app-form-error-helpers>
+        </ng-container>
+
+    <button *ngIf="!isEditing" (click)="onSubmit()">Enviar</button>
+    <button *ngIf="isEditing" (click)="update()">Guardar Cambios</button>
+    <div *ngIf="inscriptionExist">
+        <p class="error-msg-submit">Este usuario ya existe en esta inscripcion</p>
+    </div>
+</form>
+
+
+<h3 class="section-title" [appFontSize]="1.2">Inscripciones</h3>
+<div class="inscription-list-box">
+    <ng-container *ngFor="let inscription of (state$ | async)?.inscriptions; index as i">
+        <div class="students-box" [ngClass]="{'delete-animation': selectedIndex == inscription.id}">
+            <div class="edit-box">
+               <img [src]="inscription.subject?.logo" class="profile-pic" />
+               <div class="icons-box">
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin'" (click)="onEdit(inscription, i)" class="edit-icon material-icons-outlined">edit</mat-icon>
+                <mat-icon (click)="navigateToDetail(inscription.id)" class="edit-icon material-icons-outlined">visibility</mat-icon>  
+                <mat-icon *ngIf="(authUser$ | async)?.role == 'admin'" (click)="onDelete(inscription.id)" class="delete material-icons-outlined">close</mat-icon>   
+               </div>
+            </div>
+            <p class="student-text">Curso: {{inscription.subject?.name}}</p>
+            <p class="student-text">ID de Cursada: {{inscription.id}}</p>
+        </div>
+    </ng-container>
+</div>

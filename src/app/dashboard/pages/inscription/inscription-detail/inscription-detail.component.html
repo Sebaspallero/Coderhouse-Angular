@@ -1,0 +1,31 @@
+<div class="course-detail-box">
+    <div class="banner"></div>
+    <div class="profile-pic-box">
+        <img  [src]="inscription?.subject?.logo" class="profile-pic" />
+    </div>
+    <div class="info-box">
+        <div>
+            <p class="male-text">{{inscription?.subject?.name}}</p>
+            <div class="user-status-box">
+                <p class="user-status">Cursada</p>
+                <p class="user-status">- ID: {{inscription?.id}}</p>
+            </div>
+        </div>
+        <div>
+            <p class="user-status">Sobre el Curso</p>
+            <p class="course-info">{{inscription?.subject?.description}}</p>
+        </div>
+        <div>
+            <p class="user-status">Fecha de Inicio</p>
+            <p class="course-info">{{inscription?.course?.startDate | date:'dd/MM/YYYY'}}</p>
+        </div>
+        <div>
+            <p class="user-status">Fecha de Finalización</p>
+            <p class="course-info">{{inscription?.course?.endDate | date:'dd/MM/YYYY'}}</p>
+        </div>
+    </div>
+    <div class="subject-box">
+        <p class="courses-title">Estudiante</p>
+        <div class="course-name"><span class="bullet"></span>{{inscription?.student?.name}} {{inscription?.student?.lastName}}</div>
+    </div>
+</div>

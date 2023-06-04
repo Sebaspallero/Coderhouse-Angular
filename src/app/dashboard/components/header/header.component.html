@@ -1,0 +1,13 @@
+<header class="header-box">
+    <div class="dashboard-logo-box">
+        <h2 class="header-title">{{title | capitalize}}</h2>
+    </div>
+    <div class="userinfo-box">
+            <img *ngIf="(authUser$ | async)?.gender == 'M'" src="../../../../assets/profile.png" class="header-profile-pic">
+            <img *ngIf="(authUser$ | async)?.gender == 'F'" src="../../../../assets/profilewoman.png" class="header-profile-pic">
+        <div class="userstatus-box">
+            <p class="header-username">{{(authUser$ | async)?.name}}</p>
+            <p class="header-userstatus">{{(authUser$ | async)?.role | capitalize}}</p>
+        </div>
+    </div>
+</header>
