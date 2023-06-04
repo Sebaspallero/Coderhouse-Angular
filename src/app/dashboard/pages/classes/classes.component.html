@@ -7,13 +7,12 @@
             <option selected disabled hidden style='display: none' value=''></option>
             <option value="3">JavaScript</option>
             <option value="1">Angular</option>
-            <option value="2">Desarrollo Web</option>
+            <option value="2">Vue</option>
             <option value="4">React</option>
         </select>
         <ng-container *ngIf="nameControl.touched">
             <app-form-error-helpers [formErrors]="nameControl.errors"></app-form-error-helpers>
         </ng-container>
-
         <label>Fecha de Inicio</label>
             <div class="date-input">
                 <input 
@@ -60,14 +59,14 @@
     <ng-container *ngFor="let course of coursesList; index as i">
         <div class="students-box" [ngClass]="{'delete-animation': selectedIndex == course.id}">
             <div class="edit-box">
-                <img [src]="course.subject.logo" class="profile-pic" />
+                <img *ngIf="course.subject?.logo" [src]="course.subject.logo" class="profile-pic"/>
                 <div class="icons-box">
                     <mat-icon *ngIf="(authUser$ | async)?.role == 'admin'" (click)="onEdit(course, i)"  class="edit-icon material-icons-outlined">edit</mat-icon>
                     <mat-icon (click)="navigateToDetail(course.id)" class="edit-icon material-icons-outlined">visibility</mat-icon>  
                     <mat-icon  *ngIf="(authUser$ | async)?.role == 'admin'"(click)="onDelete(course.id)" class="delete material-icons-outlined">close</mat-icon>   
                 </div>
             </div>
-            <p class="student-text">Nombre: <span>{{course.subject.name}}</span></p>
+            <p class="student-text">Nombre: <span>{{course?.subject?.name}}</span></p>
             <p class="student-text">Fecha de Inicio: {{course?.startDate | date:'dd/MM/YYYY'}} </p>
             <p class="student-text">Fecha de Fin: {{course?.endDate | date:'dd/MM/YYYY'}}</p>
         </div>

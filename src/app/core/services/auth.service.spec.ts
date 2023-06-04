@@ -32,7 +32,7 @@ describe('Testing of AuthService', () => {
         password: loginFake.password,
         role: 'admin',
         gender: 'M',
-        token: 'asdjkasdnasjhdj36231321',
+        token: 12345,
       },
     ];
     spyOn(TestBed.inject(Router), 'navigate');
@@ -68,7 +68,7 @@ describe('Testing of AuthService', () => {
         gender: 'M',
         password: loginFake.password,
         role: 'admin',
-        token: 'asdjkasdnasjhdj36231321',
+        token: 12345,
       },
     ];
 

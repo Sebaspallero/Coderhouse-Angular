@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Student } from '../models/student';
 import { HttpClient } from '@angular/common/http';
 import { Inscription, InscriptionWithAll } from '../models/inscription';
@@ -44,11 +44,6 @@ export class StudentsService {
     return this.httpClient.get<Inscription>(`http://localhost:3000/inscriptions?studentId=${id}`)
   };
 
-  //ARREGLAR
-  deleteStudentFromCourse(inscription: any): Observable<Inscription>{
-    console.log(inscription)
-    return this.httpClient.put<Inscription>(`http://localhost:3000/inscriptions/${inscription[0]?.courseId}`, inscription)
-  };
 
   postStudentOnDb(student: Student): Observable<Student> {
     return this.httpClient.post<Student>(`http://localhost:3000/students`, student)

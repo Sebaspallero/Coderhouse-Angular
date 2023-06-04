@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { Inscription, InscriptionWithAll } from 'src/app/core/models/inscription';
+import { InscriptionWithAll } from 'src/app/core/models/inscription';
 import { InscriptionsService } from 'src/app/core/services/inscriptions.service';
 
 
@@ -32,10 +32,5 @@ export class InscriptionDetailComponent implements OnDestroy{
   ngOnDestroy(): void {
     this.destroyed$.next(true)
   };
-
-  /* onDelete(): void{
-    delete this.student?.course
-    console.log(this.student)
-  } */
 }
 

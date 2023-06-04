@@ -19,16 +19,6 @@
       "role": "user",
       "token": 129483748,
       "id": 2
-    },
-    {
-      "name": "Martina",
-      "lastName": "Mervitch",
-      "email": "martina@email.com",
-      "gender": "F",
-      "password": "12345",
-      "role": "admin",
-      "id": 3,
-      "token": 1685822473435
     }
   ],
   "courses": [
@@ -52,8 +42,8 @@
     },
     {
       "subjectId": 4,
-      "startDate": "2023-06-19T03:00:00.000Z",
-      "endDate": "2023-06-30T03:00:00.000Z",
+      "startDate": "2023-06-04T03:00:00.000Z",
+      "endDate": "2023-08-31T03:00:00.000Z",
       "id": 4
     }
   ],
@@ -86,8 +76,8 @@
   "inscriptions": [
     {
       "studentId": 1,
-      "subjectId": 3,
-      "courseId": 3,
+      "subjectId": 1,
+      "courseId": 1,
       "id": 1
     },
     {
@@ -115,11 +105,11 @@
       "registrationDate": "2023-04-27T01:27:59.631Z"
     },
     {
-      "id": 3,
       "name": "Marcos",
       "lastName": "Fillipo",
       "email": "marcos@email.com",
       "gender": "M",
+      "id": 3,
       "registrationDate": "2023-04-27T01:27:59.631Z"
     }
   ]

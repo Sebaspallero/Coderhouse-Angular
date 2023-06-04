@@ -8,7 +8,7 @@
         <div>
             <p [ngClass]="user?.gender == 'F' ? 'female-text' : 'male-text'">{{user?.name}} {{user?.lastName}}</p>
             <div class="user-status-box">
-                <p class="user-status">{{user.role}}</p>
+                <p class="user-status">{{user?.role}}</p>
                 <p class="user-status">- ID: {{user?.id}}</p>
             </div>
         </div>

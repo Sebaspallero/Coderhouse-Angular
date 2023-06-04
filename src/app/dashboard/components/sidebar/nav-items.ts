@@ -27,11 +27,3 @@ export const generalLinks: NavItem[] = [
     },
 ];
 
-export const settingsLinks: NavItem[] =[
-    {
-        path: 'cuenta',
-        title: 'Cuenta',
-        icon: 'account_circle'
-    },
-];
-

@@ -28,9 +28,4 @@ export class UserDetailComponent implements OnDestroy, OnInit {
   ngOnDestroy(): void {
     this.destroyed$.next(true)
   };
-
-  /* onDelete(): void{
-    delete this.student?.course
-    console.log(this.student)
-  } */
 }

@@ -1,22 +1,22 @@
 import { BehaviorSubject, Observable, of } from "rxjs";
-import { Student } from "src/app/core/models/student";
+import { User } from "src/app/core/models/user";
 import { loginFormValue } from "src/app/core/services/auth.service";
 
 
-export const USER_ADMIN_MOCK: Student = {
+export const USER_ADMIN_MOCK: User = {
   id: 1,
   lastName: 'testapellido',
   email: 'test@mail.com',
   name: 'testnombre',
   gender: "M",
   role: 'admin',
-  token: 'asdkjsanfkdams3u2hjdasfadsuh',
+  token: 12345,
   password: '12312312',
 }
 
 export class AuthServiceMock {
 
-  private authUser$ = new BehaviorSubject<Student | null>(null);
+  private authUser$ = new BehaviorSubject<User | null>(null);
 
   login(formValue: loginFormValue): void {
     this.authUser$.next(USER_ADMIN_MOCK);

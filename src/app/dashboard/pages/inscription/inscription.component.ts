@@ -178,10 +178,8 @@ export class InscriptionComponent implements OnDestroy, OnInit {
       this.inscriptionExist = false
       this.inscriptionForm.reset();
       this.selectedCourseControl.reset();
-      setTimeout(()=>{
-      //ARREGLAR UI
-       this.store.dispatch(InscriptionsActions.loadInscriptions())
-      },3000) 
+      this.store.dispatch(InscriptionsActions.loadInscriptions())
+  
     } 
     else{
       this.inscriptionForm.markAllAsTouched();

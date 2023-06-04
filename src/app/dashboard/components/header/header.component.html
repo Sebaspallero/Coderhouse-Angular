@@ -7,7 +7,7 @@
             <img *ngIf="(authUser$ | async)?.gender == 'F'" src="../../../../assets/profilewoman.png" class="header-profile-pic">
         <div class="userstatus-box">
             <p class="header-username">{{(authUser$ | async)?.name}}</p>
-            <p class="header-userstatus">{{(authUser$ | async)?.role | capitalize}}</p>
+            <p class="header-userstatus">{{(authUser$ | async)?.role}}</p>
         </div>
     </div>
 </header>

@@ -19,12 +19,6 @@
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(76,68,182,1) 0%, rgba(97,91,183,1) 68%, rgba(108,103,183,1) 100%);
 }
 
-.banner-pink{
-    height: 7em;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(233,149,163,0.01) 0%, rgba(232,153,166,1) 0%, rgba(224,176,184,1) 100%);
-}
-
 .profile-pic-box{
     background-color: var(--white-clr);
     position: absolute;

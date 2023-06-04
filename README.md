@@ -4,15 +4,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Proyecto Final de Angular -Coderhouse-
 
--Nombre: `Liceum`
+-Nombre: `Liceum`.
 -Descripción: App de gestion de estudiantes y cursos.
 
 -Información:
 
-*Login:   mail: sebastian@email.com | admin 
-                maria@email.com | user
+*Json-server: Escribir comando json-server --watch database/db.json
 
-          contraseña: 12345
+*Login:
+
+-Mail: sebastian@email.com => admin ||  maria@email.com => user
+-Contraseña: 12345
 
 *Navegador: Preferencia Google Chrome
 

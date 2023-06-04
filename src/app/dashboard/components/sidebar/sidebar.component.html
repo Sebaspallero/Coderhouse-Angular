@@ -16,10 +16,6 @@
             <p class="list-item-text">Usuarios</p>
         </a>
         <h3 class="list-section-title">Settings</h3>
-        <a class="list-item-box" *ngFor="let link of settingsLinks">
-            <mat-icon class="list-item-icon material-icons-outlined">{{link.icon}}</mat-icon>
-            <p class="list-item-text">{{link.title}}</p>
-        </a>
         <a class="list-item-box" (click)="logOut()">
             <mat-icon class="list-item-icon material-icons-outlined">logout</mat-icon>
             <p class="list-item-text">Log Out</p>

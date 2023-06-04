@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { generalLinks, settingsLinks } from './nav-items';
+import { generalLinks } from './nav-items';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Observable, Subject } from 'rxjs';
@@ -42,7 +42,6 @@ export class SidebarComponent implements OnDestroy {
   }
 
   generalLinks = generalLinks;
-  settingsLinks = settingsLinks;
   
 }
 
